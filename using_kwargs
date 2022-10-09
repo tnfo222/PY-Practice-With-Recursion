@@ -1,0 +1,20 @@
+#Define a function named manyParams() that accepts any number of 
+# named parameters. The function should return three lists: 
+# a list of all the string parameters, 
+# a list of any numerical parameters (each incremented by three), 
+# and a list of any non-string and non-numerical parameters.
+
+def manyParams(**kwargs):
+  string_list = []
+  number_list = []
+  other_list = []
+  
+  for i in kwargs.keys():
+    if type(i) == str:
+      string_list.append(i)
+    elif type(i) == int:
+      number_list.append(i+3)
+    else:
+      other_list.append(i)
+      
+  return string_list, number_list, other_list
